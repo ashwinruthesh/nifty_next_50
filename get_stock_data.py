@@ -29,11 +29,11 @@ def get_stock_data():
         if not os.path.exists('nfty_dfs/{}.csv'.format(ticker)):
             df = yf.download('{}.NS'.format(ticker), start='2000-01-01', end='2020-12-31')  # Downloading from yahoo finance and saving it to a CSV file.
             df.to_csv('nfty_dfs/{}.csv'.format(ticker)                                      # '.NS' is the code Yahoo finance appends to symbols of NSE listed companies
-          else:
-              print('Already have {}'.format(ticker))
+        else:
+            print('Already have {}'.format(ticker))
 
 
-# Now to complile all Adjusted Close values from the 50 companies to one single file.
+# Now to compile all Adjusted Close values from the 50 companies to one single file.
 # I will be using Adj Close values for all analysis 
 
 def compile_adjcloses():
